@@ -81,7 +81,7 @@
                         <p>Subtotal</p>
                     </div>
                     <div class="right">
-                        <p id="subtotal" >$0</p>
+                        <p id="total-price" >$0</p>
                     </div>
                 </div>
                 <div class="amount">
@@ -98,7 +98,7 @@
                         <h4>Total</h4>
                     </div>
                     <div class="right">
-                        <p id="total" >$0</p>
+                        <p id="grand-total" >$0</p>
                     </div>
                 </div>
             </div>
@@ -145,18 +145,18 @@
             const economyCount = getInputValue('economy');
             const totalPrice = (firstClassCount * 150) + (economyCount * 100);
             if (firstClassCount + economyCount > 0){
-                document.getElementById('subtotal').innerText = '$' + totalPrice;
+                document.getElementById('total-price').innerText = '$' + totalPrice;
             }
             else{
-                totalPrice = 0;
-                document.getElementById('subtotal').innerText = '$'+ 0;
+                document.getElementById('total-price').innerText = '$'+ 0;
             }
+            console.log(totalPrice);
 
             const tax = Math.round(totalPrice * 0.1);
             document.getElementById('tax-amount').innerText = '$' + tax;
 
-            const total = totalPrice + tax;
-            document.getElementById('total').innerText = '$' + total;
+            const grandTotal = totalPrice + tax;
+            document.getElementById('grand-total').innerText = '$' + grandTotal;
         }
 
         // count each class ticket
@@ -174,7 +174,7 @@
                 document.getElementById('order-done').style.display = "block";
                 document.getElementById('order-page').style.display = "none";
                 document.getElementById('order-details').innerText = 'You have ordered ' + getInputValue('first-class') + ' first class and ' + getInputValue('economy') + ' economy class tickets.' ;
-                document.getElementById('order-amount').innerText = 'You have to pay total ' + document.getElementById('total').innerText ;
+                document.getElementById('order-amount').innerText = 'You have to pay total ' + document.getElementById('grand-total').innerText ;
             }
             else {
                 alert('You have not ordered any ticket!!');
