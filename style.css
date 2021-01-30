@@ -94,14 +94,15 @@ nav ul li a:hover, a.active{
     align-items: center;
 }
 .inp-width{
-    min-width: 300px;
+    width: 50%;
 }
 .plus-minus-btn{
-    color: #3352F2;
-    font-size: 30px;
     padding: 2px;
-    margin: 10px 5px 0px 0px;
-    word-spacing: 20px;
+    margin-top: 30px;
+    margin-right: 30px;
+}
+.minus {
+    margin-left: 20px;
 }
 .booking-form .inputs{
     display: grid;
@@ -121,4 +122,22 @@ nav ul li a:hover, a.active{
 .amount{
     display: flex;
     justify-content: space-between;
+}
+
+#order-done{
+    display: none;
+    background-color:white;
+    border-radius: 10px;
+    width: 50%;
+    margin: 100px auto;
+    text-align: center;
+    padding: 20px;
+    color: white;
+}
+
+.border-radius{
+    border-radius: 5px;
+    background-color: rgb(175, 174, 174);
+    margin: 2px;
+    padding: 10px;
 }
